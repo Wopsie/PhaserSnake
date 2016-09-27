@@ -1,8 +1,9 @@
 var pickup = {
 	SpawnPickup: function(scene, x, y)
 	{
-		this.enableBody = true;
+		
 		pickup = game.add.sprite(x,y,'star');
+		//pickup.enableBody = true;
 		console.log("Pickup loaded");
 	},
 

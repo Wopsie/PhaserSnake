@@ -4,6 +4,8 @@ var Snake = {
 	{
 		game.load.image('star', 'Assets/Tile.png');	
 		game.load.image('pSnake', 'Assets/SnekBlock.png');
+
+		playerMovement.preload(game);
 	},
 
 	create : function()
@@ -20,11 +22,12 @@ var Snake = {
 
 	update : function()
 	{
-		//playerMovement.update();
+		//playerMovement.update(game);
 
 		game.physics.arcade.collide(player, pickup);
 		game.physics.arcade.overlap(player, pickup, pickup.RepositionPickup, null, this);
 		
+		/*
 		if(cursors.left.isDown)
 		{
 			player.body.velocity.x = -150;
@@ -38,6 +41,6 @@ var Snake = {
 		{
 			player.body.velocity.y = -150;
 		}
-		
+		*/
 	}
 };

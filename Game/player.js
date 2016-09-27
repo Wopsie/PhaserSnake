@@ -4,4 +4,4 @@ var player = {
 		pickup = game.add.sprite(x,y, 'pSnake');
 		this.enableBody = true;
 	}
-}
+};

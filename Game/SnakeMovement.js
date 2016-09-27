@@ -1,11 +1,11 @@
 var playerMovement = {
 
-	preload : function()
+	preload : function(scene)
 	{
 		Input.getInput();
-	}
+	},
 
-	update : function()
+	update : function(scene)
 	{
 		if(cursors.left.isDown)
 		{
@@ -13,4 +13,4 @@ var playerMovement = {
 		}
 	}
 
-}
+};

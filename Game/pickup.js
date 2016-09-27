@@ -14,4 +14,4 @@ var pickup = {
 		pickup.y = y;
 		//add one block to snake length
 	}
-}
+};

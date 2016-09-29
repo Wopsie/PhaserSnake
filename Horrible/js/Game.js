@@ -1,4 +1,4 @@
-var player, food, square, speed, direction, directionChange;
+var player, square, speed, direction, directionChange;
 
 //because javascript hates tidy code, this "class" will be managing the 
 //snake, spawning the food and be adding length to the snake when it eats.
@@ -19,7 +19,7 @@ var gameScene = {
 		//make array for the multiple sprites of the player
 		player = [];
 		//food object, as js demands it
-		food = {};
+		//food = {};
 		//god knows
 		square = 15;
 		//player speed
@@ -45,5 +45,7 @@ var gameScene = {
 	{
 		//player movement update (check for input);
 		playerMovement.Update();
+
+		food.SpawnFood();
 	}
 }

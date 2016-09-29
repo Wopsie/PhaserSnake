@@ -2,7 +2,7 @@ var cursors;
 
 var Input = {
 
-	GetInput : function()
+	GetKeyboardInput : function()
 	{
 		cursors = game.input.keyboard.createCursorKeys();
 	}

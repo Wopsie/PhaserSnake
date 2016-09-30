@@ -1,0 +1,7 @@
+var resizeGame = {
+
+	Resize : function()
+	{
+		
+	}
+}

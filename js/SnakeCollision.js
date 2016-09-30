@@ -25,10 +25,10 @@ var snakeCollision = {
 	BoundsCollision : function(head)
 	{
 		//check if snake is going off screen and out of bounds
-		if(head.x >= 600 || head.x < 0 || head.y >= 450 || head.y < 0)
+		if(head.x >= game.width || head.x < 0 || head.y >= game.height || head.y < 0)
 		{
-			console.log("HIT THE WALL");
-			game.state.start('start');
+			//game.state.start('start');
+			this.restart();
 		}
 	},
 
@@ -38,9 +38,13 @@ var snakeCollision = {
 		for (var i = 0; i < player.length - 1; i++) {
 			if(head.x == player[i].x && head.y == player[i].y)
 			{
-				console.log('YOU PLAYED YOURSELF');
 				game.state.start('start');
 			}
 		}
+	},
+
+	restart : function()
+	{
+		game.state.start('start');
 	}
 }

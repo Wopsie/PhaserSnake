@@ -5,6 +5,7 @@ var playerMovement = {
 	Start : function()
 	{
 		Input.GetKeyboardInput();
+		//swipes.GetSwipeInput();
 
 		newBlock = false;
 		//direction player is moving in
@@ -18,20 +19,40 @@ var playerMovement = {
 	//gets called in update method of game.js
 	Update : function()
 	{
+		swipes.Update();
 		this.ReadInput();
 		this.MoveSnake();
 	},
 
 	ReadInput : function()
 	{
-		if(cursors.left.isDown){
+		//keyboard input
+		if(cursors.left.isDown && direction != 'right'){
 			directionChange = 'left';
-		}else if(cursors.right.isDown){
+		}else if(cursors.right.isDown && direction != 'left'){
 			directionChange = 'right';
-		}else if(cursors.up.isDown){
+		}else if(cursors.up.isDown && direction != 'down'){
 			directionChange = 'up';
-		}else if(cursors.down.isDown){
+		}else if(cursors.down.isDown && direction != 'up'){
 			directionChange = 'down';
+		}
+
+		//mobile touch input
+		if(swipeDirection)
+		{
+			if(swipeDirection == 'left' && direction != 'right')
+			{
+				directionChange = 'left';
+			}else if(swipeDirection == 'right' && direction != 'left')
+			{
+				directionChange = 'right';
+			}else if(swipeDirection == 'up' && direction != 'down')
+			{
+				directionChange = 'up';
+			}else if (swipeDirection == 'down' && direction != 'up')
+			{
+				directionChange = 'down';
+			}
 		}
 	},
 
@@ -83,7 +104,7 @@ var playerMovement = {
 	IncreaseLength : function()
 	{
 		if(newBlock == true){
-			player.unshift(game.add.sprite(prevLastBlockXPos, prevLastBlockYPos, 'player'));
+			player.unshift(game.add.sprite(prevLastBlockXPos, prevLastBlockYPos, 'playerSprite'));
 			newBlock = false;
 		}
 	}
